@@ -4,14 +4,9 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText,
 } from 'reactstrap';
 
@@ -25,6 +20,13 @@ const args = {
   fixed:"bottom"
 }
 
+const icon = 
+  {
+    name: "fab fa-github",
+    link: "https://github.com/ClaytonSnell"
+  }
+
+
 function Footer(props) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,31 +34,25 @@ function Footer(props) {
     return (
         <div>
         <Navbar {...args}>
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
+                <NavLink href= {icon.link}>
+                github
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="https://www.linkedin.com/in/clayton-snell-94474323b/">
+                  Linkedin
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://stackoverflow.com/users/20628009/mach-schnell">
+                  Stack Overflow
+                </NavLink>
+              </NavItem>
             </Nav>
-            <NavbarText>Simple Text</NavbarText>
           </Collapse>
         </Navbar>
       </div>

@@ -1,3 +1,6 @@
+import Contact from '../pages/Contact';
+
+
 
 import React, { useState } from 'react';
 import {
@@ -16,50 +19,53 @@ import {
 } from 'reactstrap';
 
 const args = {
-  color:"light",
-  light:"true",
-  //dark:"false",
-  full:"false",
-  expand:"md",
-  container:"fluid"
+  color: "dark",
+  // light:"false",
+  dark: "false",
+  full: "false",
+  expand: "md",
+  container: "flex"
 }
 
 function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-    return (
-        <div>
-        <Navbar {...args}>
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
-          <NavbarToggler onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="me-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
-            <NavbarText>Simple Text</NavbarText>
-          </Collapse>
-        </Navbar>
-      </div>
-    )
+  return (
+    <div>
+      <Navbar {...args}>
+        <NavbarBrand href="">Clayton Snell</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav pills >
+            <NavItem >
+              <NavLink
+                active
+                href="/About"
+              >
+                About Me
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/Portfolio">
+                Portfolio
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                Contact
+              </NavLink>
+            </NavItem>
+            <NavItem>
+            <NavLink href="#">
+                Resume
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
+  )
 }
 
 
