@@ -1,5 +1,5 @@
 import Contact from '../pages/Contact';
-
+import { Link } from "react-router-dom"; 
 
 
 import React, { useState } from 'react';
@@ -52,9 +52,10 @@ function Header(props) {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink>
-                Contact
-              </NavLink>
+              <NavLink
+                href="#Contact">
+                  Contact 
+                </NavLink>     
             </NavItem>
             <NavItem>
             <NavLink href="#">
