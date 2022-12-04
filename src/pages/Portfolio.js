@@ -17,22 +17,23 @@ function Portfolio() {
       repo: "https://github.com/ClaytonSnell/the-fate-book"
     },
     {
-      name: 'run-buddy',
+      name: 'cool-weather-api',
       description: 'HTML/CSS',
-      link: "https://github.com",
-      repo: "https://github.com"
+      link: "https://claytonsnell.github.io/cool-weather-api/",
+      repo: "https://github.com/ClaytonSnell/cool-weather-api"
     },
     {
-      name: 'led-wall',
-      description: 'Node/IoT',
-      link: "https://github.com",
-      repo: "https://github.com"
+      name: 'B&B',
+      description: 'MERN restructring',
+      link: "https://beans-and-brew.herokuapp.com/",
+      repo: "https://github.com/j-art-fox/Project-3-Beans-and-Brews"
     },
     {
-      name: 'calculator',
-      description: 'React/JavaScript/CSS',
+      name: 'progressive-web-app-text-editor',
+      description: 'PWA',
+      // . NEEDS LINK STILL
       link: "https://github.com",
-      repo: "https://github.com"
+      repo: "https://github.com/ClaytonSnell/progressive-web-app-text-editor"
     },
   ]);
 
