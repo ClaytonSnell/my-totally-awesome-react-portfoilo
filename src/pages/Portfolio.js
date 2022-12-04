@@ -11,10 +11,10 @@ function Portfolio() {
       repo: "https://github.com/ClaytonSnell/carpe-diem-scheduler"
     },
     {
-      name: 'pastel-puzzels',
+      name: 'the-fate-book',
       description: 'MERN Stack',
-      link: "https://claytonsnell.github.io/carpe-diem-scheduler/",
-      repo: "https://github.com/ClaytonSnell/carpe-diem-scheduler"
+      link: "https://claytonsnell.github.io/the-fate-book/",
+      repo: "https://github.com/ClaytonSnell/the-fate-book"
     },
     {
       name: 'run-buddy',

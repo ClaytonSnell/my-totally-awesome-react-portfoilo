@@ -8,6 +8,8 @@ function Project({ project }) {
   return (
     <div className="project" key={name}>
       <img
+      // need to change routes that match to pictures and use the same name as followed by jpg is in the portfolio folder
+      // *****8
         // src={require(`../assets/projects/${name}.jpg`).default}
         alt={removeHyphensAndCapitalize(name)}
         className="project-bg"
