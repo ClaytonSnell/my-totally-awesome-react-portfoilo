@@ -1,4 +1,3 @@
-import Contact from '../pages/Contact';
 import React, { useState } from 'react';
 import {
   Collapse,
@@ -7,7 +6,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText,
 } from 'reactstrap';
 
 const args = {

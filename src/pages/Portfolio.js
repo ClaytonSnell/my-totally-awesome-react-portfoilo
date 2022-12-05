@@ -13,7 +13,16 @@ import {
 const styles = {
   pic: {
   padding: '40px',
-  }
+  },
+  btn: {
+    background: '#72859a',
+    border: 'none',
+    color: 'white',
+    marginLeft: 300,
+    marginRight: 300,
+    display: 'flex',
+    justifyContent: 'center'
+  },
 }
 
 
