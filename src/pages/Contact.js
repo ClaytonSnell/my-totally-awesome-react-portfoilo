@@ -7,6 +7,7 @@ import {
     FormGroup,
     Input,
     Label,
+    Button
 } from 'reactstrap';
 
 const styles = {
@@ -81,7 +82,7 @@ function Contact() {
                         type="name"
                         onBlur={handleChange}
                         defaultValue={email}
-                    />\
+                    />
                 </FormGroup>
                 <FormGroup>
                     <Label for="exampleText">
@@ -94,11 +95,16 @@ function Contact() {
                         onBlur={handleChange}
                         defaultValue={message}
                     />
-                </FormGroup>
+                </FormGroup>   {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
+                <Button type="btn">Submit</Button>
             </Form>
         </div>
 
-    )
+    );
 }
 
 export default Contact;
