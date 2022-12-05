@@ -1,30 +1,50 @@
-import React from 'react';
-import { removeHyphensAndCapitalize } from '../utils/helpers';
+import time from '../media/time.jpg';
+import book from '../media/the-fate-book.jpg';
+import cool from '../media/tornado.jpg';
+import brew from '../media/beans-and-brew.jpg';
+import pwa from '../media/pwa.jpg';
 
-function Project({ project }) {
+  const items = [
+    {
+      name: 'Carpe diem Scheduler',
+      image: time,
+      caption: 'Javascript/CSS/HTML',
+      link: "https://claytonsnell.github.io/carpe-diem-scheduler/",
+      repo: "https://github.com/ClaytonSnell/carpe-diem-scheduler",
+      id: '1'
+    },
+    {
+      name: 'The Fate Book',
+      image: book,
+      caption: 'MERN Stack',
+      link: "https://claytonsnell.github.io/the-fate-book/",
+      repo: "https://github.com/ClaytonSnell/the-fate-book",
+      id: '2'
+    },
+    {
+      name: 'cool-weather-api',
+      caption: 'HTML/CSS',
+      image: cool,
+      link: "https://claytonsnell.github.io/cool-weather-api/",
+      repo: "https://github.com/ClaytonSnell/cool-weather-api",
+      id: '3'
+    },
+    {
+      name: 'Beans and Brew',
+      caption: 'MERN restructring',
+      image: brew,
+      link: "https://beans-and-brew.herokuapp.com/",
+      repo: "https://github.com/j-art-fox/Project-3-Beans-and-Brews",
+      id: '4'
+    },
+    {
+      name: 'progressive-web-app-text-editor',
+      caption: 'PWA',
+      image: pwa,
+      link: "https://github.com",
+      repo: "https://github.com/ClaytonSnell/progressive-web-app-text-editor",
+      id: '5'
+    },
+  ];
 
-  const { name, repo, link, description } = project;
-
-  return (
-    <div className="project" key={name}>
-      <img
-      // need to change routes that match to pictures and use the same name as followed by jpg is in the portfolio folder
-      // *****8
-        src={require(`../../src/media/${name}.jpg`).default}
-        alt={removeHyphensAndCapitalize(name)}
-        className="project-bg"
-      />
-      <div className="project-text">
-        <h3>
-          <a href={link}>{removeHyphensAndCapitalize(name)}</a>{' '}
-          <a href={repo}>
-            <i className="fab fa-github"></i>
-          </a>
-        </h3>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
-
-export default Project;
+export default items;

@@ -1,54 +1,84 @@
 import React, { useState } from 'react';
-import Project from "./Project";
+import items from './Project';
 
-function Portfolio() {
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption,
+} from 'reactstrap';
 
-  const [projects] = useState([
-    {
-      name: 'carpe-diem-scheduler',
-      description: 'Javascript/CSS/HTML',
-      link: "https://claytonsnell.github.io/carpe-diem-scheduler/",
-      repo: "https://github.com/ClaytonSnell/carpe-diem-scheduler"
-    },
-    {
-      name: 'the-fate-book',
-      description: 'MERN Stack',
-      link: "https://claytonsnell.github.io/the-fate-book/",
-      repo: "https://github.com/ClaytonSnell/the-fate-book"
-    },
-    {
-      name: 'cool-weather-api',
-      description: 'HTML/CSS',
-      link: "https://claytonsnell.github.io/cool-weather-api/",
-      repo: "https://github.com/ClaytonSnell/cool-weather-api"
-    },
-    {
-      name: 'beans-and-brew',
-      description: 'MERN restructring',
-      link: "https://beans-and-brew.herokuapp.com/",
-      repo: "https://github.com/j-art-fox/Project-3-Beans-and-Brews"
-    },
-    {
-      name: 'progressive-web-app-text-editor',
-      description: 'PWA',
-      // . NEEDS LINK STILL
-      link: "https://github.com",
-      repo: "https://github.com/ClaytonSnell/progressive-web-app-text-editor"
-    },
-  ]);
+const styles = {
+  pic: {
+  padding: '40px',
+  }
+}
+
+
+function Portfolio(args) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  };
+
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  };
+
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
+  };
+
+  const slides = items.map((item) => {
+    return (
+      
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.src}
+      >
+        <img className="d-block w-100" style={styles.pic} src={item.image} alt={item.name} />
+        <CarouselCaption 
+          captionHeader={item.name}
+          captionText={item.caption}
+        />
+      </CarouselItem>
+    );
+  });
 
   return (
-    <div>
-      <div className="flex-row">
-        {projects.map((project, idx) => (
-          <Project
-            project={project}
-            key={"project" + idx}
-          />
-        ))}
-      </div>
-    </div>
+    <Carousel
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+      {...args}
+    >
+      <CarouselIndicators
+        items={items}
+        activeIndex={activeIndex}
+        onClickHandler={goToIndex}
+      />
+      {slides}
+      <CarouselControl
+        direction="prev"
+        directionText="Previous"
+        onClickHandler={previous}
+      />
+      <CarouselControl
+        direction="next"
+        directionText="Next"
+        onClickHandler={next}
+      />
+    </Carousel>
   );
-};
+}
 
 export default Portfolio;
