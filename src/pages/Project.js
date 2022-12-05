@@ -10,7 +10,7 @@ function Project({ project }) {
       <img
       // need to change routes that match to pictures and use the same name as followed by jpg is in the portfolio folder
       // *****8
-        // src={require(`../assets/projects/${name}.jpg`).default}
+        src={require(`../../src/media/${name}.jpg`).default}
         alt={removeHyphensAndCapitalize(name)}
         className="project-bg"
       />

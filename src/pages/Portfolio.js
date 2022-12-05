@@ -23,7 +23,7 @@ function Portfolio() {
       repo: "https://github.com/ClaytonSnell/cool-weather-api"
     },
     {
-      name: 'B&B',
+      name: 'beans-and-brew',
       description: 'MERN restructring',
       link: "https://beans-and-brew.herokuapp.com/",
       repo: "https://github.com/j-art-fox/Project-3-Beans-and-Brews"

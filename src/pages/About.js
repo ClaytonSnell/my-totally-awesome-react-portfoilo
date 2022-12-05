@@ -1,9 +1,10 @@
-import image from '../../src/media/profile.jpeg'
+import image from '../../src/media/profile.png'
 
 const styles = {
   card: {
-    width:'425px',
-    height:'575px'
+    width:'400px',
+    height:'400px',
+    padding: 25,
   },
 }
 
