@@ -2,8 +2,8 @@ import image from '../../src/media/profile.jpeg'
 
 const styles = {
   card: {
-    width:'400px',
-    height:'600px'
+    width:'425px',
+    height:'575px'
   },
 }
 

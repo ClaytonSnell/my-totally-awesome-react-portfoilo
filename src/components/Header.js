@@ -1,8 +1,4 @@
-import Contact from '../pages/Contact';
-import { Link } from "react-router-dom"; 
-
-
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Collapse,
   Navbar,
@@ -11,11 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
 } from 'reactstrap';
 
 const args = {
@@ -27,20 +18,26 @@ const args = {
   container: "flex"
 }
 
+const styles = {
+  brand: {
+    fontSize: '200%',
+    padding: '20px'
+  }
+}
+
 export default function Header({ currentPage, handlePageChange }) {
-  const [showNavRight, setShowNavRight] = useState(false);
 
   return (
     <div>
       <Navbar {...args}>
-        <NavbarBrand href="">Clayton Snell</NavbarBrand>
-        <NavbarToggler  />
+        <NavbarBrand href="" style={styles.brand}>Clayton Snell</NavbarBrand>
+        <NavbarToggler />
         <Collapse navbar>
           <Nav pills >
             <NavItem className='navCust' >
               <NavLink
-           aria-current='page' href='#about' onClick={() => handlePageChange('About')} className={currentPage === 'About'}>
-           About Me
+                aria-current='page' href='#about' onClick={() => handlePageChange('About')} className={currentPage === 'About'}>
+                About Me
               </NavLink>
             </NavItem>
             <NavItem>
@@ -52,10 +49,10 @@ export default function Header({ currentPage, handlePageChange }) {
               <NavLink
                 href='#contact' onClick={() => handlePageChange('Contact')} className={currentPage === 'Contact'}>
                 Contact
-                </NavLink>     
+              </NavLink>
             </NavItem>
             <NavItem>
-            <NavLink href='#resume' onClick={() => handlePageChange('Resume')} className={currentPage === 'Resume'}>
+              <NavLink href='#resume' onClick={() => handlePageChange('Resume')} className={currentPage === 'Resume'}>
                 Resume
               </NavLink>
             </NavItem>
