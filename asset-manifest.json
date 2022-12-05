@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/my-totally-awsome-react-portfoilo/static/css/main.3ecf3825.css",
-    "main.js": "/my-totally-awsome-react-portfoilo/static/js/main.5fcda159.js",
-    "static/js/787.c4e7f8f9.chunk.js": "/my-totally-awsome-react-portfoilo/static/js/787.c4e7f8f9.chunk.js",
+    "main.css": "/my-totally-awsome-react-portfoilo/static/css/main.345ec4e7.css",
+    "main.js": "/my-totally-awsome-react-portfoilo/static/js/main.789d90c5.js",
+    "static/js/787.1c0b2090.chunk.js": "/my-totally-awsome-react-portfoilo/static/js/787.1c0b2090.chunk.js",
+    "static/media/the-fate-book.jpg": "/my-totally-awsome-react-portfoilo/static/media/the-fate-book.f3847183787cd28b3265.jpg",
+    "static/media/time.jpg": "/my-totally-awsome-react-portfoilo/static/media/time.04879632e5ecbf69e260.jpg",
+    "static/media/pwa.jpg": "/my-totally-awsome-react-portfoilo/static/media/pwa.bcdfa006f5ac98dac136.jpg",
+    "static/media/profile.png": "/my-totally-awsome-react-portfoilo/static/media/profile.afa79b7de95722f22aa1.png",
+    "static/media/tornado.jpg": "/my-totally-awsome-react-portfoilo/static/media/tornado.2a9e5b3bb9a0af6389e1.jpg",
+    "static/media/beans-and-brew.jpg": "/my-totally-awsome-react-portfoilo/static/media/beans-and-brew.8f4fd21456eaa495f7b4.jpg",
     "index.html": "/my-totally-awsome-react-portfoilo/index.html",
-    "main.3ecf3825.css.map": "/my-totally-awsome-react-portfoilo/static/css/main.3ecf3825.css.map",
-    "main.5fcda159.js.map": "/my-totally-awsome-react-portfoilo/static/js/main.5fcda159.js.map",
-    "787.c4e7f8f9.chunk.js.map": "/my-totally-awsome-react-portfoilo/static/js/787.c4e7f8f9.chunk.js.map"
+    "main.345ec4e7.css.map": "/my-totally-awsome-react-portfoilo/static/css/main.345ec4e7.css.map",
+    "main.789d90c5.js.map": "/my-totally-awsome-react-portfoilo/static/js/main.789d90c5.js.map",
+    "787.1c0b2090.chunk.js.map": "/my-totally-awsome-react-portfoilo/static/js/787.1c0b2090.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ecf3825.css",
-    "static/js/main.5fcda159.js"
+    "static/css/main.345ec4e7.css",
+    "static/js/main.789d90c5.js"
   ]
 }
