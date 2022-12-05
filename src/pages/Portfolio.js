@@ -7,6 +7,7 @@ import {
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
+  Button,
 } from 'reactstrap';
 
 const styles = {
@@ -41,10 +42,12 @@ function Portfolio(args) {
     return (
       
       <CarouselItem
-        onExiting={() => setAnimating(true)}
-        onExited={() => setAnimating(false)}
-        key={item.src}
+      onExiting={() => setAnimating(true)}
+      onExited={() => setAnimating(false)}
+      key={item.src}
       >
+      <Button style={styles.btn} href={item.repo} target='_blank' variant="link">View the repository</Button>
+            <Button style={styles.btn} href={item.link} target='_blank' variant="link">View the live site/tutorial</Button>
         <img className="d-block w-100" style={styles.pic} src={item.image} alt={item.name} />
         <CarouselCaption 
           captionHeader={item.name}
