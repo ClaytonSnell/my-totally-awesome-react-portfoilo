@@ -1,36 +1,104 @@
+import React, { useState } from 'react';
 
-import React from "react";
-import { useState } from "react";
+import { validateEmail } from '../utils/helpers';
 
-const Contact = () => {
-    const [contactName, setContactName] = useState("");
-    const [contactEmail, setContactEmail] = useState("");
-    const [contactMessage, setContactMessage] = useState("");
+import {
+    Form,
+    FormGroup,
+    Input,
+    Label,
+} from 'reactstrap';
 
-    function submitHandler(event) {
-        event.preventDefault();
-        console.log(contactName, contactEmail);
-        if (contactName === "") {
-            alert("Name is required.");
-        } else if (contactEmail === "") {
-            alert("Email is required.");
-        };
-        setContactName("");
-        setContactEmail("");
+const styles = {
+    form: {
+    padding: '40px'
     }
-    return (
-        <div className="contact-prompt">
-            <form onSubmit={submitHandler}>
-                <h3 name="contactName">Name:</h3>
-                <input type="text" placeholder="Enter your name" value={contactName} onChange={(event) => setContactName(event.target.value)} />
-                <h3 name="contactEmail">Email:</h3>
-                <input type="email" placeholder="Enter your email" value={contactEmail} onChange={(event) => setContactEmail(event.target.value)} />
-                <h3>Your Message:</h3>
-                <textarea value={contactMessage} onChange={(event) => setContactMessage(event.target.value)} rows="5" placeholder="Enter message" />
-                <button type="submit" className="submit-button" disabled={!contactMessage || !contactEmail || !contactEmail}>Submit</button>
-            </form>
-        </div>
-    );
 };
+
+
+function Contact() {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const [errorMessage, setErrorMessage] = useState('');
+  const { name, email, message } = formState;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!errorMessage) {
+      console.log('Submit Form', formState);
+    }
+  };
+
+  const handleChange = (e) => {
+    if (e.target.name === 'email') {
+      const isValid = validateEmail(e.target.value);
+      if (!isValid) {
+        setErrorMessage('Your email is invalid.');
+      } else {
+        setErrorMessage('');
+      }
+    } else {
+      if (!e.target.value.length) {
+        setErrorMessage(`${e.target.name} is required.`);
+      } else {
+        setErrorMessage('');
+      }
+    }
+    if (!errorMessage) {
+      setFormState({ ...formState, [e.target.name]: e.target.value });
+      console.log('Handle Form', formState);
+    }
+  };
+
+    return (
+        <div style={styles.form}>
+            <Form onSubmit={handleSubmit}>
+                <FormGroup>
+                    <Label for="exampleEmail">
+                        Email
+                    </Label>
+                    <Input
+                        id="exampleEmail"
+                        name="email"
+                        placeholder="with a placeholder"
+                        type="email"
+                        onBlur={handleChange}
+                        defaultValue={name}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="exampleName">
+                        Name
+                    </Label>
+                    <Input
+                        id="examplename"
+                        name="name"
+                        placeholder="name placeholder"
+                        type="name"
+                        onBlur={handleChange}
+                        defaultValue={email}
+                    />\
+                </FormGroup>
+                <FormGroup>
+                    <Label for="exampleText">
+                        Text Area
+                    </Label>
+                    <Input
+                        id="exampleText"
+                        name="text"
+                        type="textarea"
+                        onBlur={handleChange}
+                        defaultValue={message}
+                    />
+                </FormGroup>
+            </Form>
+        </div>
+
+    )
+}
 
 export default Contact;

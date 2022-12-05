@@ -1,11 +1,18 @@
 import image from '../../src/media/profile.jpeg'
 
+const styles = {
+  card: {
+    width:'400px',
+    height:'600px'
+  },
+}
+
 function About() {
     return (
         <section class="page-section" id="about">
+          <img style={styles.card} src={image} alt= "pic of myself"/>
         <h1>About Me</h1>
         <div>
-          <img src={image} alt= "pic of myself"/>
           <p>
           My name is Clayton Snell. I was born and riased in the Salt Lake Valley of Utah and have lived there for the majority of my life. Though I still own property in Utah, I am currently living with my wife and kids in Maryland. I haveattended a coding bootcamp offered by the University of Utah to change careers and directions in my lifes path.
           </p>

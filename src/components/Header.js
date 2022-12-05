@@ -27,38 +27,35 @@ const args = {
   container: "flex"
 }
 
-function Header(props) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Header({ currentPage, handlePageChange }) {
+  const [showNavRight, setShowNavRight] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
   return (
     <div>
       <Navbar {...args}>
         <NavbarBrand href="">Clayton Snell</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <NavbarToggler  />
+        <Collapse navbar>
           <Nav pills >
-            <NavItem >
+            <NavItem className='navCust' >
               <NavLink
-                active
-                href="/About"
-              >
-                About Me
+           aria-current='page' href='#about' onClick={() => handlePageChange('About')} className={currentPage === 'About'}>
+           About Me
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Portfolio">
+              <NavLink href='#portfolio' onClick={() => handlePageChange('Portfolio')} className={currentPage === 'Portfolio'}>
                 Portfolio
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                href="#Contact">
-                  Contact 
+                href='#contact' onClick={() => handlePageChange('Contact')} className={currentPage === 'Contact'}>
+                Contact
                 </NavLink>     
             </NavItem>
             <NavItem>
-            <NavLink href="#">
+            <NavLink href='#resume' onClick={() => handlePageChange('Resume')} className={currentPage === 'Resume'}>
                 Resume
               </NavLink>
             </NavItem>
@@ -70,4 +67,3 @@ function Header(props) {
 }
 
 
-export default Header;
