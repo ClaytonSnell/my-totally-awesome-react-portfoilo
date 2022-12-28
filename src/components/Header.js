@@ -1,4 +1,6 @@
-import React from 'react';
+
+import React, { useState } from 'react';
+
 import {
   Collapse,
   Navbar,
@@ -24,20 +26,20 @@ const styles = {
     padding: '20px'
   }
 }
-
-export default function Header({ currentPage, handlePageChange }) {
-
+export default function Header({ currentPage, handlePageChange}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <div>
       <Navbar {...args}>
         <NavbarBrand href="" style={styles.brand}>Clayton Snell</NavbarBrand>
-        <NavbarToggler />
-        <Collapse navbar>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
           <Nav pills >
             <NavItem className='navCust' >
               <NavLink
-                aria-current='page' href='#about' onClick={() => handlePageChange('About')} className={currentPage === 'About'}>
-                About Me
+           aria-current='page' href='#about' onClick={() => handlePageChange('About')} className={currentPage === 'About'}>
+           About Me
               </NavLink>
             </NavItem>
             <NavItem>
@@ -49,10 +51,10 @@ export default function Header({ currentPage, handlePageChange }) {
               <NavLink
                 href='#contact' onClick={() => handlePageChange('Contact')} className={currentPage === 'Contact'}>
                 Contact
-              </NavLink>
+                </NavLink>     
             </NavItem>
             <NavItem>
-              <NavLink href='#resume' onClick={() => handlePageChange('Resume')} className={currentPage === 'Resume'}>
+            <NavLink href='#resume' onClick={() => handlePageChange('Resume')} className={currentPage === 'Resume'}>
                 Resume
               </NavLink>
             </NavItem>
@@ -62,5 +64,6 @@ export default function Header({ currentPage, handlePageChange }) {
     </div>
   )
 }
+
 
 
