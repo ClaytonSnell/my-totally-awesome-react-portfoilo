@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { BsGithub,
+  BsLinkedin,
+  BsStackOverflow } from "react-icons/bs";
 import {
   Collapse,
   Navbar,
@@ -14,40 +17,41 @@ const args = {
   //dark:"false",
   full:"false",
   expand:"md",
-  container:"fluid",
+  container:"flex",
   fixed:"bottom"
 }
 
-const icon = 
-  {
-    name: "fab fa-github",
-    link: "https://github.com/ClaytonSnell"
+const styles = {
+  icons: {
+  justifyContent: 'center',
+  fontSize: '200%'
   }
+}
 
 
-function Footer(props) {
+function Footer() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-        <Navbar {...args}>
+        <Navbar style={styles.icons} {...args}>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
-                <NavLink href= {icon.link}>
-                github
+                <NavLink href= "https://github.com/ClaytonSnell">
+                <BsGithub />
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://www.linkedin.com/in/clayton-snell-94474323b/">
-                  Linkedin
+                <BsLinkedin />
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://stackoverflow.com/users/20628009/mach-schnell">
-                  Stack Overflow
+                  <BsStackOverflow />
                 </NavLink>
               </NavItem>
             </Nav>

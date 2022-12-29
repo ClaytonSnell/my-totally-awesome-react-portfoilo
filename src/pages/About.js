@@ -3,7 +3,7 @@ import image from '../../src/media/profile.png'
 const styles = {
   card: {
     width:'400px',
-    height:'600px'
+    height:'400px'
   },
   aside: {
     flex: 1,
