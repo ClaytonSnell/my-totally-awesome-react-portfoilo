@@ -12,14 +12,16 @@ import {
 
 const styles = {
   pic: {
-  padding: '40px',
+  padding: '10px',
+  height: '100',
+  width: '200'
   },
   btn: {
     background: '#72859a',
     border: 'none',
     color: 'white',
-    marginLeft: 300,
-    marginRight: 300,
+    marginLeft: 400,
+    marginRight: 400,
     display: 'flex',
     justifyContent: 'center'
   },
